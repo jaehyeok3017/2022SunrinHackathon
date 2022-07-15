@@ -62,8 +62,7 @@ class AddPhotoActivity : AppCompatActivity() {
         //make filename
         var timestamp = SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
         var imageFileName = "IMAGE_" + timestamp + "_.png"
-
-
+        
     }
 
 
