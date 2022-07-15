@@ -3,6 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.a2022sunrinhackathon">
 
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+
+
+
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -17,8 +25,9 @@
         <activity android:name=".Activity.RegisterActivity"/>
         <activity android:name=".Activity.LoginActivity"/>
         <activity android:name=".Activity.MapActivity"/>
+        <activity android:name=".Activity.SplashActivity"/>
         <activity
-            android:name=".Activity.SplashActivity"
+            android:name=".Activity.AddPhotoActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,5 +39,8 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyD5IDA_ZdNWKq5cHgCl9XIJ5RJCHvACrpY"/>
+
+
+
     </application>
 </manifest>
