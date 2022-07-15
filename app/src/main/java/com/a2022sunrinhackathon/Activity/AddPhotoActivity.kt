@@ -27,7 +27,7 @@ class AddPhotoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityAddPhotoBinding.inflate(layoutInflater)
         val view = binding.root
-        setContentView(R.layout.activity_add_photo)
+        setContentView(view)
 
         var uploadButton = findViewById<Button>(R.id.add_btn)
 
