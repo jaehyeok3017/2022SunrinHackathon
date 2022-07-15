@@ -6,6 +6,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.RatingBar
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.a2022sunrinhackathon.R
@@ -35,6 +36,10 @@ class AddPhotoActivity : AppCompatActivity() {
         addPhotoBtnUpload.setOnClickListener {
             contentUpload()
         }
+
+        val add_rating = findViewById<RatingBar>(R.id.add_rating)
+        add_rating.setOnRatingBarChangeListener { ratingBar, rating, fromUser -> add_rating.rating = rating }
+
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -60,5 +65,6 @@ class AddPhotoActivity : AppCompatActivity() {
 
 
     }
+
 
 }
