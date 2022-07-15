@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "122706592785",
+    "project_id": "sunrinhackathon-fb906",
+    "storage_bucket": "sunrinhackathon-fb906.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:122706592785:android:92312ce95424c24fbcddb0",
+        "android_client_info": {
+          "package_name": "com.a2022sunrinhackathon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "122706592785-30maqkgo3dh8jpjras0an52nplrnqqva.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2ERU4XLf0eMp0_JIKDlDgbU9aQ_sBp3k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "122706592785-30maqkgo3dh8jpjras0an52nplrnqqva.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
