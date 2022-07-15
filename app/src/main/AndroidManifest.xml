@@ -16,6 +16,7 @@
         <activity android:name=".Activity.MainActivity"/>
         <activity android:name=".Activity.RegisterActivity"/>
         <activity android:name=".Activity.LoginActivity"/>
+        <activity android:name=".Activity.MapActivity"/>
         <activity
             android:name=".Activity.SplashActivity"
             android:exported="true">
@@ -28,6 +29,6 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="${MAPS_API_KEY}" />
+            android:value="AIzaSyD5IDA_ZdNWKq5cHgCl9XIJ5RJCHvACrpY"/>
     </application>
 </manifest>
