@@ -3,23 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Hackathon/2022SunrinHackathon/app/src/main/res/drawable/btn_round.xml" value="0.3105" />
-        <entry key="..\:/Hackathon/2022SunrinHackathon/app/src/main/res/drawable/ic_baseline_person_pin_24.xml" value="0.313" />
-        <entry key="..\:/Hackathon/2022SunrinHackathon/app/src/main/res/drawable/ic_logo.xml" value="0.338" />
-        <entry key="..\:/Hackathon/2022SunrinHackathon/app/src/main/res/font/font.xml" value="0.3692708333333333" />
-        <entry key="..\:/Hackathon/2022SunrinHackathon/app/src/main/res/layout/activity_add_photo.xml" value="0.25" />
-        <entry key="..\:/Hackathon/2022SunrinHackathon/app/src/main/res/layout/activity_login.xml" value="0.2911458333333333" />
-        <entry key="..\:/Hackathon/2022SunrinHackathon/app/src/main/res/layout/activity_main.xml" value="0.3359375" />
-        <entry key="..\:/Hackathon/2022SunrinHackathon/app/src/main/res/layout/activity_map.xml" value="0.33177083333333335" />
-        <entry key="..\:/Hackathon/2022SunrinHackathon/app/src/main/res/layout/activity_register.xml" value="0.33" />
-        <entry key="..\:/Hackathon/2022SunrinHackathon/app/src/main/res/layout/activity_sns.xml" value="0.1" />
-        <entry key="..\:/Hackathon/2022SunrinHackathon/app/src/main/res/layout/activity_splash.xml" value="0.33177083333333335" />
-        <entry key="..\:/Hackathon/2022SunrinHackathon/app/src/main/res/layout/activity_upload_photo.xml" value="0.1546875" />
-        <entry key="..\:/Hackathon/2022SunrinHackathon/app/src/main/res/layout/fragment_review.xml" value="0.3359375" />
-        <entry key="..\:/Hackathon/2022SunrinHackathon/app/src/main/res/layout/fragment_suggest.xml" value="0.3359375" />
-        <entry key="..\:/Hackathon/2022SunrinHackathon/app/src/main/res/layout/fragment_user_info.xml" value="0.3359375" />
-        <entry key="..\:/Hackathon/2022SunrinHackathon/app/src/main/res/layout/item_sns.xml" value="0.5" />
-        <entry key="..\:/Hackathon/2022SunrinHackathon/app/src/main/res/menu/menu_bottom_navigation.xml" value="0.33489583333333334" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/2022SunrinHackathon/app/src/main/res/layout/activity_add_photo.xml" value="0.147008547008547" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/2022SunrinHackathon/app/src/main/res/layout/activity_login.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/2022SunrinHackathon/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/2022SunrinHackathon/app/src/main/res/layout/activity_map.xml" value="0.14615384615384616" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/2022SunrinHackathon/app/src/main/res/layout/activity_maps.xml" value="0.147008547008547" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/2022SunrinHackathon/app/src/main/res/layout/activity_register.xml" value="0.1" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/2022SunrinHackathon/app/src/main/res/layout/activity_sns.xml" value="0.10854700854700855" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/2022SunrinHackathon/app/src/main/res/layout/activity_splash.xml" value="0.178125" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/2022SunrinHackathon/app/src/main/res/layout/actvity_map.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/2022SunrinHackathon/app/src/main/res/layout/item_sns.xml" value="0.1076923076923077" />
       </map>
     </option>
   </component>
