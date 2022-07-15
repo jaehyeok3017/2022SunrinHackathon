@@ -1,4 +1,4 @@
-package com.a2022sunrinhackathon
+package com.a2022sunrinhackathon.Activity
 
 import android.content.ContentValues
 import android.content.Intent

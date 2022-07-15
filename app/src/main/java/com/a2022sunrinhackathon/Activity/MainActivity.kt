@@ -1,7 +1,8 @@
-package com.a2022sunrinhackathon
+package com.a2022sunrinhackathon.Activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.a2022sunrinhackathon.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
