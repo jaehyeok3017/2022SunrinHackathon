@@ -16,13 +16,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.2022SunrinHackathon"
         tools:targetApi="31">
-        <activity android:name=".Activity.MainActivity"/>
+        <activity android:name=".Activity.SnsActivity"/>
         <activity android:name=".Activity.RegisterActivity"/>
         <activity android:name=".Activity.LoginActivity"/>
         <activity android:name=".Activity.MapActivity"/>
-        <activity android:name=".Activity.SplashActivity"/>
+        <activity android:name=".Activity.AddPhotoActivity"/>
         <activity
-            android:name=".Activity.AddPhotoActivity"
+            android:name=".Activity.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
