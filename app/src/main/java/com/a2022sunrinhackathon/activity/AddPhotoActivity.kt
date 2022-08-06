@@ -1,4 +1,4 @@
-package com.a2022sunrinhackathon.Activity
+package com.a2022sunrinhackathon.activity
 
 import android.app.Activity
 import android.content.Intent
@@ -8,8 +8,8 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.RatingBar
 import androidx.appcompat.app.AppCompatActivity
-import com.a2022sunrinhackathon.Data.placeDTO
 import com.a2022sunrinhackathon.R
+import com.a2022sunrinhackathon.data.firebase.placeDTO
 import com.a2022sunrinhackathon.databinding.ActivityAddPhotoBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -31,21 +31,13 @@ class AddPhotoActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        var uploadButton = findViewById<Button>(R.id.add_btn)
-
         //Initiate storage
         auth = FirebaseAuth.getInstance()
         store = FirebaseFirestore.getInstance()
 
-        //Open the album
-        var photoPickerIntent = Intent(Intent.ACTION_PICK)
-        photoPickerIntent.type = "image/*"
-        startActivityForResult(photoPickerIntent, PICK_IMAGE_FROM_ALBUM)
+        binding.addImage.setOnClickListener { openAlbum() }
+        binding.addBtn.setOnClickListener { dataUpload() }
 
-        //add image upload event
-        uploadButton.setOnClickListener {
-            dataUpload()
-        }
 
         val add_rating = findViewById<RatingBar>(R.id.add_rating)
         add_rating.setOnRatingBarChangeListener { ratingBar, rating, fromUser -> add_rating.rating = rating }
@@ -67,6 +59,12 @@ class AddPhotoActivity : AppCompatActivity() {
         }
     }
 
+    fun openAlbum(){
+        //Open the album
+        var photoPickerIntent = Intent(Intent.ACTION_PICK)
+        photoPickerIntent.type = "image/*"
+        startActivityForResult(photoPickerIntent, PICK_IMAGE_FROM_ALBUM)
+    }
 
     fun dataUpload() {
         //make filename

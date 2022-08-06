@@ -1,13 +1,12 @@
-package com.a2022sunrinhackathon.Adapter
+package com.a2022sunrinhackathon.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.a2022sunrinhackathon.Data.placeDTO
 import com.a2022sunrinhackathon.R
+import com.a2022sunrinhackathon.data.firebase.placeDTO
 
 class ListAdapter(val itemList: ArrayList<placeDTO>): RecyclerView.Adapter<ListAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListAdapter.ViewHolder {

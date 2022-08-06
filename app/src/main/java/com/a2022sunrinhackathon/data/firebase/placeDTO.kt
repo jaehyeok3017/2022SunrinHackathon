@@ -1,4 +1,4 @@
-package com.a2022sunrinhackathon.Data
+package com.a2022sunrinhackathon.data.firebase
 
 data class placeDTO(
     var userEmail: String? = null,

@@ -1,4 +1,4 @@
-package com.a2022sunrinhackathon.Activity
+package com.a2022sunrinhackathon.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

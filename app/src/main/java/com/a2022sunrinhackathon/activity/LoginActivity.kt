@@ -1,8 +1,9 @@
-package com.a2022sunrinhackathon.Activity
+package com.a2022sunrinhackathon.activity
 
 import android.content.ContentValues
 import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -22,18 +23,9 @@ class LoginActivity : AppCompatActivity() {
 
         auth = FirebaseAuth.getInstance()
         binding.loginbtn.setOnClickListener {
-            val emailText = binding.email.text
-            val passwdText = binding.passwd.text
-
-            val emailLength = binding.email.length()
-            val passwdLength = binding.passwd.length()
-
-            if(emailText != null && passwdText != null && emailLength != 0 && passwdLength != 0){
-                signIn()
-            }
-
-            else{
-                Toast.makeText(this, "로그인에 실패했습니다.", Toast.LENGTH_LONG).show()
+            when(loginCompleteCheck(binding.email.text, binding.passwd.text)){
+                true -> signIn()
+                false -> Toast.makeText(this, "로그인에 실패했습니다.", Toast.LENGTH_LONG).show()
             }
         }
 
@@ -42,7 +34,14 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    fun signIn() {
+    private fun loginCompleteCheck(emailText: Editable, passwdText: Editable): Boolean {
+        val emailLength = emailText.length
+        val passwdLength = passwdText.length
+
+        return emailLength != 0 && passwdLength != 0
+    }
+
+    private fun signIn() {
         auth?.signInWithEmailAndPassword(
             binding.email.text.toString(),
             binding.passwd.text.toString()
@@ -58,7 +57,7 @@ class LoginActivity : AppCompatActivity() {
             }
     }
 
-    fun moveLoginPage(user: FirebaseUser?){
+    private fun moveLoginPage(user: FirebaseUser?){
         if(user != null) {
             Toast.makeText(this, "로그인이 완료되었습니다!", Toast.LENGTH_LONG).show()
             startActivity(Intent(this, AddPhotoActivity::class.java))

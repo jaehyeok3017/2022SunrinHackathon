@@ -7,6 +7,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
+        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -16,13 +17,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.2022SunrinHackathon"
         tools:targetApi="31">
-        <activity android:name=".Activity.SnsActivity"/>
-        <activity android:name=".Activity.RegisterActivity"/>
-        <activity android:name=".Activity.LoginActivity"/>
-        <activity android:name=".Activity.MapActivity"/>
-        <activity android:name=".Activity.AddPhotoActivity"/>
+        <activity android:name=".activity.SnsActivity"/>
+        <activity android:name=".activity.RegisterActivity"/>
+        <activity android:name=".activity.LoginActivity"/>
+        <activity android:name=".activity.MapActivity"/>
+        <activity android:name=".activity.AddPhotoActivity"/>
         <activity
-            android:name=".Activity.SplashActivity"
+            android:name=".activity.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
