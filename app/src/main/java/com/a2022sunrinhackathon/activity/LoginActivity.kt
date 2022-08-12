@@ -34,6 +34,11 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
+    override fun onStart(){
+        super.onStart()
+        moveMainPage(auth?.currentUser)
+    }
+
     private fun loginCompleteCheck(emailText: Editable, passwdText: Editable): Boolean {
         val emailLength = emailText.length
         val passwdLength = passwdText.length
@@ -49,7 +54,7 @@ class LoginActivity : AppCompatActivity() {
             ?.addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     Log.d(ContentValues.TAG, "signInWithEmail:success")
-                    moveLoginPage(task.result?.user)
+                    moveMainPage(task.result?.user)
                 } else {
                     Log.d(ContentValues.TAG, "failed")
                     Toast.makeText(this, task.exception?.message, Toast.LENGTH_LONG).show()
@@ -57,10 +62,10 @@ class LoginActivity : AppCompatActivity() {
             }
     }
 
-    private fun moveLoginPage(user: FirebaseUser?){
+    private fun moveMainPage(user: FirebaseUser?){
         if(user != null) {
             Toast.makeText(this, "로그인이 완료되었습니다!", Toast.LENGTH_LONG).show()
-            startActivity(Intent(this, AddPhotoActivity::class.java))
+            startActivity(Intent(this, AddPostActivity::class.java))
         }
     }
 }
