@@ -1,5 +1,6 @@
 package com.a2022sunrinhackathon.activity
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -25,5 +26,13 @@ class SnsActivity : AppCompatActivity(){
 
         binding.recyclerView.adapter = SnsRecyclerViewAdapter()
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
+
+        binding.plusBtn.setOnClickListener {
+            startActivity(Intent(this, AddPostActivity::class.java))
+        }
+
+        binding.mapBtn.setOnClickListener {
+            startActivity(Intent(this, MapActivity::class.java))
+        }
     }
 }
