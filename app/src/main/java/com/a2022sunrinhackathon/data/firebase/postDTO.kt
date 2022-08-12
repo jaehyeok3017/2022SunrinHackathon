@@ -5,6 +5,6 @@ data class postDTO(
     var imageUrl : String? = null,
     var comment : String? = null,
     var address : String? = null,
-    var rating : Long? = null,
+    var rating : Float? = null,
     var timeStamp : Long? = null
 )

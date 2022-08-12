@@ -80,7 +80,7 @@ class AddPostActivity : AppCompatActivity() {
                 postDTO.imageUrl = uri.toString()
                 postDTO.comment = binding.commentEditText.text.toString()
                 postDTO.address = binding.addressEditText.text.toString()
-                postDTO.rating = binding.addRating.rating.toLong()
+                postDTO.rating = binding.addRating.rating.toFloat()
                 postDTO.timeStamp = System.currentTimeMillis()
 
                 db.collection("posts")

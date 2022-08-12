@@ -35,6 +35,7 @@ class SnsRecyclerViewAdapter(): RecyclerView.Adapter<SnsRecyclerViewAdapter.View
         fun bind(data: postDTO){
             binding.address.text = data.address
             binding.comment.text = data.comment
+            binding.rating.rating = data.rating!!
         }
     }
 
