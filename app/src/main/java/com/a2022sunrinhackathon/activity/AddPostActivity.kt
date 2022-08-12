@@ -73,24 +73,26 @@ class AddPostActivity : AppCompatActivity() {
         val stoargeRef = storage?.reference?.child("images")?.child(imageFileName)
 
         stoargeRef?.putFile(photoUrl!!)?.addOnSuccessListener {
-            val postDTO = postDTO()
+            stoargeRef.downloadUrl.addOnSuccessListener { uri ->
+                val postDTO = postDTO()
 
-            postDTO.userId = auth?.currentUser?.uid
-            postDTO.imageUrl = photoUrl.toString()
-            postDTO.comment = binding.commentEditText.text.toString()
-            postDTO.address = binding.addressEditText.text.toString()
-            postDTO.rating = binding.addRating.rating.toLong()
-            postDTO.timeStamp = System.currentTimeMillis()
+                postDTO.userId = auth?.currentUser?.uid
+                postDTO.imageUrl = uri.toString()
+                postDTO.comment = binding.commentEditText.text.toString()
+                postDTO.address = binding.addressEditText.text.toString()
+                postDTO.rating = binding.addRating.rating.toLong()
+                postDTO.timeStamp = System.currentTimeMillis()
 
-            db.collection("posts")
-                .add(postDTO)
-                .addOnSuccessListener { documentReference ->
-                    Log.d(TAG, "DocumentSnapshot written with ID: ${documentReference.id}")
-                    startActivity(Intent(this, SnsActivity::class.java))
-                }
-                .addOnFailureListener{ e ->
-                    Log.w(TAG, "Error adding document", e)
-                }
+                db.collection("posts")
+                    .add(postDTO)
+                    .addOnSuccessListener { documentReference ->
+                        Log.d(TAG, "DocumentSnapshot written with ID: ${documentReference.id}")
+                        startActivity(Intent(this, SnsActivity::class.java))
+                    }
+                    .addOnFailureListener{ e ->
+                        Log.w(TAG, "Error adding document", e)
+                    }
+            }
         }
     }
 }
