@@ -42,35 +42,35 @@ class RegisterActivity : AppCompatActivity() {
         }
     }
 
-    fun checkEmail(): Boolean {
+    private fun checkEmail(): Boolean {
         val email = binding.registeremail.text.toString()
         val emailFormatCheck = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$"
         val p = Pattern.matches(emailFormatCheck, email)
 
-        when(p){
-            true -> return true
+        return when(p){
+            true -> true
             false -> {
                 binding.emailCheckText.visibility = View.VISIBLE
-                return false
+                false
             }
         }
     }
 
-    fun checkPasswd(): Boolean {
+    private fun checkPasswd(): Boolean {
         val passwd = binding.registerpasswd.text.toString()
         val passwdFormatCheck = "^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[\$@\$!%*#?&])[A-Za-z[0-9]\$@\$!%*#?&]{8,20}\$"
         val p = Pattern.matches(passwdFormatCheck, passwd)
 
-        when(p){
-            true -> return true
+        return when(p){
+            true -> true
             false -> {
                 binding.passwdCheckText.visibility = View.VISIBLE
-                return false
+                false
             }
         }
     }
 
-    fun checkRepeatPasswd(): Boolean {
+    private fun checkRepeatPasswd(): Boolean {
         val passwd = binding.registerpasswd.text.toString()
         val repeatPasswd = binding.registerRepeatPasswd.text.toString()
         val p = passwd == repeatPasswd
@@ -84,7 +84,7 @@ class RegisterActivity : AppCompatActivity() {
         }
     }
 
-    fun createUser(){
+    private fun createUser(){
         auth?.createUserWithEmailAndPassword(
             binding.registeremail.text.toString(),
             binding.registerpasswd.text.toString()
@@ -117,7 +117,7 @@ class RegisterActivity : AppCompatActivity() {
             }
     }
 
-    fun moveLoginPage(user: FirebaseUser?){
+    private fun moveLoginPage(user: FirebaseUser?){
         if(user != null) {
             Toast.makeText(this, "회원가입이 완료되었습니다!", Toast.LENGTH_LONG).show()
             startActivity(Intent(this, LoginActivity::class.java))
