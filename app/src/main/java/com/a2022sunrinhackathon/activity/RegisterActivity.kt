@@ -101,7 +101,7 @@ class RegisterActivity : AppCompatActivity() {
             }
     }
 
-    fun signIn() {
+    private fun signIn() {
         auth?.signInWithEmailAndPassword(
             binding.registeremail.text.toString(),
             binding.registerpasswd.text.toString()
