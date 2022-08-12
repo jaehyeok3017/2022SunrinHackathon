@@ -6,10 +6,10 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.a2022sunrinhackathon.R
-import com.a2022sunrinhackathon.data.firebase.placeDTO
+import com.a2022sunrinhackathon.data.firebase.postDTO
 
-class ListAdapter(val itemList: ArrayList<placeDTO>): RecyclerView.Adapter<ListAdapter.ViewHolder>() {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListAdapter.ViewHolder {
+class SnsAdapter(val itemList: ArrayList<postDTO>): RecyclerView.Adapter<SnsAdapter.ViewHolder>() {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SnsAdapter.ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_sns, parent, false)
         return ViewHolder(view)
     }
@@ -18,7 +18,7 @@ class ListAdapter(val itemList: ArrayList<placeDTO>): RecyclerView.Adapter<ListA
         return itemList.size
     }
 
-    override fun onBindViewHolder(holder: ListAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: SnsAdapter.ViewHolder, position: Int) {
         holder.email.text = itemList[position].userEmail.toString()
         holder.imageurl.text = itemList[position].imageUrl
         holder.comment.text = itemList[position].exaplain
