@@ -1,23 +1,20 @@
 package com.a2022sunrinhackathon.adapter
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.a2022sunrinhackathon.R
 import com.a2022sunrinhackathon.data.firebase.postDTO
+import com.a2022sunrinhackathon.databinding.ItemSnsBinding
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 
 class SnsRecyclerViewAdapter(): RecyclerView.Adapter<SnsRecyclerViewAdapter.ViewHolder>() {
-    private var postDTOs: ArrayList<postDTO> = arrayListOf()
-    private var firestore : FirebaseFirestore? = null
+    private val postDTOs: ArrayList<postDTO> = arrayListOf()
+    private var firestore : FirebaseFirestore? = FirebaseFirestore.getInstance()
     private var uid : String? = null
 
     init {
-        firestore?.collection(uid!!)?.orderBy("timestamp", Query.Direction.DESCENDING)
-            ?.addSnapshotListener { querySnapshot, firebaseFirestoreException ->
+        firestore?.collection("posts")?.addSnapshotListener { querySnapshot, firebaseFirestoreException ->
                 postDTOs.clear()
                 if (querySnapshot == null) return@addSnapshotListener
 
@@ -29,18 +26,24 @@ class SnsRecyclerViewAdapter(): RecyclerView.Adapter<SnsRecyclerViewAdapter.View
             }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SnsRecyclerViewAdapter.ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_sns, parent, false)
-        return ViewHolder(view)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val binding = ItemSnsBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return ViewHolder(binding)
+    }
+
+    class ViewHolder(private val binding: ItemSnsBinding): RecyclerView.ViewHolder(binding.root) {
+        fun bind(data: postDTO){
+            binding.address.text = data.address
+            binding.comment.text = data.comment
+        }
     }
 
     override fun getItemCount(): Int {
         return postDTOs.size
     }
 
-    override fun onBindViewHolder(holder: SnsRecyclerViewAdapter.ViewHolder, position: Int) {
-
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.bind(postDTOs[position])
     }
 
-    inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) { }
 }
