@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.a2022sunrinhackathon.data.firebase.postDTO
 import com.a2022sunrinhackathon.databinding.ItemSnsBinding
+import com.bumptech.glide.Glide
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 
@@ -36,6 +37,9 @@ class SnsRecyclerViewAdapter(): RecyclerView.Adapter<SnsRecyclerViewAdapter.View
             binding.address.text = data.address
             binding.comment.text = data.comment
             binding.rating.rating = data.rating!!
+
+            Glide.with(itemView)
+                .load(data.imageUrl).into(binding.image)
         }
     }
 
