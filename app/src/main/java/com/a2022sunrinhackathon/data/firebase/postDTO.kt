@@ -6,5 +6,6 @@ data class postDTO(
     var comment : String? = null,
     var address : String? = null,
     var rating : Float? = null,
-    var timeStamp : Long? = null
+    var timeStamp : Long? = null,
+    var time : String? = null
 )

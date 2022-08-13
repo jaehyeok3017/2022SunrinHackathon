@@ -37,6 +37,7 @@ class SnsRecyclerViewAdapter(): RecyclerView.Adapter<SnsRecyclerViewAdapter.View
             binding.address.text = data.address
             binding.comment.text = data.comment
             binding.rating.rating = data.rating!!
+            binding.time.text = data.time
 
             Glide.with(itemView)
                 .load(data.imageUrl).into(binding.image)
