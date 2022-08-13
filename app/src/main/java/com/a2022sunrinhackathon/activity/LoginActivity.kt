@@ -57,14 +57,14 @@ class LoginActivity : AppCompatActivity() {
                     moveMainPage(task.result?.user)
                 } else {
                     Log.d(ContentValues.TAG, "failed")
-                    Toast.makeText(this, task.exception?.message, Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, task.exception?.message, Toast.LENGTH_SHORT).show()
                 }
             }
     }
 
     private fun moveMainPage(user: FirebaseUser?){
         if(user != null) {
-            Toast.makeText(this, "로그인이 완료되었습니다!", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "로그인이 완료되었습니다!", Toast.LENGTH_SHORT).show()
             startActivity(Intent(this, SnsActivity::class.java))
         }
     }
