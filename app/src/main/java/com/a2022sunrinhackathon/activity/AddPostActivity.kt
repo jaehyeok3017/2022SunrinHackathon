@@ -82,12 +82,14 @@ class AddPostActivity : AppCompatActivity() {
                 postDTO.address = binding.addressEditText.text.toString()
                 postDTO.rating = binding.addRating.rating.toFloat()
                 postDTO.timeStamp = System.currentTimeMillis()
+                postDTO.time = SimpleDateFormat("yyyy.MM.dd HH:mm").format(Date())
+
+                startActivity(Intent(this, SnsActivity::class.java))
 
                 db.collection("posts")
                     .add(postDTO)
                     .addOnSuccessListener { documentReference ->
                         Log.d(TAG, "DocumentSnapshot written with ID: ${documentReference.id}")
-                        startActivity(Intent(this, SnsActivity::class.java))
                     }
                     .addOnFailureListener{ e ->
                         Log.w(TAG, "Error adding document", e)
