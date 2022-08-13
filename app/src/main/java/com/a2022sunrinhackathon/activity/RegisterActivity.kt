@@ -37,7 +37,7 @@ class RegisterActivity : AppCompatActivity() {
             }
 
             else{
-                Toast.makeText(this, "각 형식을 확인해주세요", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "각 형식을 확인해주세요", Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -94,7 +94,7 @@ class RegisterActivity : AppCompatActivity() {
                     Log.d(ContentValues.TAG, "createUserWithEmail:success")
                     moveLoginPage(task.result?.user)
                 } else if(task.exception?.message.isNullOrEmpty()){
-                    Toast.makeText(this, task.exception?.message, Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, task.exception?.message, Toast.LENGTH_SHORT).show()
                 } else {
                     signIn()
                 }
@@ -112,14 +112,14 @@ class RegisterActivity : AppCompatActivity() {
                     moveLoginPage(task.result?.user)
                 } else {
                     Log.d(ContentValues.TAG, "failed")
-                    Toast.makeText(this, task.exception?.message, Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, task.exception?.message, Toast.LENGTH_SHORT).show()
                 }
             }
     }
 
     private fun moveLoginPage(user: FirebaseUser?){
         if(user != null) {
-            Toast.makeText(this, "회원가입이 완료되었습니다!", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "회원가입이 완료되었습니다!", Toast.LENGTH_SHORT).show()
             startActivity(Intent(this, LoginActivity::class.java))
         }
     }

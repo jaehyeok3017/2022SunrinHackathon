@@ -25,7 +25,7 @@ class LoginActivity : AppCompatActivity() {
         binding.loginbtn.setOnClickListener {
             when(loginCompleteCheck(binding.email.text, binding.passwd.text)){
                 true -> signIn()
-                false -> Toast.makeText(this, "로그인에 실패했습니다.", Toast.LENGTH_LONG).show()
+                false -> Toast.makeText(this, "로그인에 실패했습니다.", Toast.LENGTH_SHORT).show()
             }
         }
 
